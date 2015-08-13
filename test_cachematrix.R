@@ -4,7 +4,29 @@
 #   Cloned Repo (https://help.github.com/articles/fork-a-repo/)
 #     git clone https://github.com/YOUR-USERNAME/Spoon-Knife
 #     git clone https://github.com/JohnWSteill/ProgrammingAssignment2
+#     git add all
 source('cachematrix.R')
+
+z = makeCacheMatrix(2*diag(10))
+expect_identical(z$get(),diag(10))
+# expect_identical(z$cacheSolve(),NULL)
+# z$setInverse("Peanuts")
+# expect_identical(z$getInverse(),"Peanuts")
+# expect_identical(cacheSolve(z),"Peanuts")
+# z$set(2*diag(10))
+# expect_identical(z$getInverse(),NULL)
+# expect_equal(cacheSolve(z),5*diag(10))
+
+z = makeVector(1:10) 
+expect_identical(z$get(),1:10)
+expect_identical(z$getmean(),NULL)
+z$setmean("Peanuts")
+expect_identical(z$getmean(),"Peanuts")
+expect_identical(cachemean(z),"Peanuts")
+z$set(1:10)
+expect_identical(z$getmean(),NULL)
+expect_equal(cachemean(z),5.5)
+
 
 # Introduction
 # 
